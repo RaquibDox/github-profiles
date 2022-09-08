@@ -6,11 +6,20 @@ const search = document.getElementById('search');
 
 getUser("RaquibDox")
 
-async function getUser(user) {
-    const resp  = await fetch(APIURL + user);
+async function getUser(username) {
+    const resp  = await fetch(APIURL + username);
     const respData = await resp.json();
 
     createUserCard(respData);
+
+    getRepos(username);
+}
+
+async function getRepos(username){
+    const resp  = await fetch(APIURL + username + '/repos');
+    const respData = await resp.json();
+
+    addReposCard(respData);
 }
 
 function createUserCard(user){
@@ -24,15 +33,35 @@ function createUserCard(user){
             <p>${user.bio}</p>
 
             <ul class="info">
-                <li>${user.followers}</li>
-                <li>${user.following}</li>
-                <li>${user.public_repos}</li>
+                <li>${user.followers}<strong>Followers</strong></li>
+                <li>${user.following}<strong>Following</strong></li>
+                <li>${user.public_repos}<strong>Repos</strong></li>
             </ul>
+            <div id="repos"></div>
         </div>
     </div>
     `;
 
+
     main.innerHTML = cardHTML;
+}
+
+function addReposCard(repos){
+    const reposEl =document.getElementById('repos');
+    console.log(reposEl);
+
+    repos.forEach(repo => {
+        const repoEl =document.createElement("a");
+        repoEl.classList.add("repo");
+
+        repoEl.href = repo.html_url;
+        repoEl.target= "_blank";
+        repoEl.innerText =repo.name;
+
+        reposEl.appendChild(repoEl);
+        
+    });
+
 }
 
 form.addEventListener('submit', e =>{

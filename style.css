@@ -30,6 +30,10 @@ input::placeholder {
     color: rgba(113, 47, 47, 0.69);
 }
 
+input:focus {
+    outline: none;
+}
+
 .card {
     background: #00dadeac;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #fb00ffaf, #00dadeac );  /* Chrome 10-25, Safari 5.1-6 */
@@ -69,6 +73,17 @@ input::placeholder {
     display: flex;
     justify-content: space-between;
     padding: 0;
-    max-width: 300px;
+    margin-top: 1.5rem;
+    max-width: 400px;
     list-style-type: none;
+}
+
+.user-info ul li {
+    display: flex;
+    align-items: center;
+}
+
+.user-info ul li strong {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
 }
