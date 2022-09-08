@@ -4,6 +4,8 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+getUser("RaquibDox")
+
 async function getUser(user) {
     const resp  = await fetch(APIURL + user);
     const respData = await resp.json();
@@ -17,7 +19,7 @@ function createUserCard(user){
         <div>
             <img class ="avatar" src="${user.avatar_url}" alt="${user.name}">
         </div>
-        <div>
+        <div class = "user-info">
             <h2>${user.name}</h2>
             <p>${user.bio}</p>
 
