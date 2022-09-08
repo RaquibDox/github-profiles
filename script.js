@@ -37,6 +37,10 @@ function createUserCard(user){
                 <li>${user.following}<strong>Following</strong></li>
                 <li>${user.public_repos}<strong>Repos</strong></li>
             </ul>
+            
+        </div>
+        <div class = "user-repo">
+            <h4>Repos :</h4>
             <div id="repos"></div>
         </div>
     </div>
@@ -50,7 +54,7 @@ function addReposCard(repos){
     const reposEl =document.getElementById('repos');
     console.log(reposEl);
 
-    repos.forEach(repo => {
+    repos.sort((a,b) => b.stargazers_count -a.stargazers_count).forEach(repo => {
         const repoEl =document.createElement("a");
         repoEl.classList.add("repo");
 
