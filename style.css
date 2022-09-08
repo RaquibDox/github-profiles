@@ -16,7 +16,18 @@ body {
 }
 
 input {
-    font-size: 2rem;
+    background-color: #afc7eca6;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: rgb(79, 18, 18);
+    font-family: inherit;
+    border: 2px solid #afc7ecd2;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+input::placeholder {
+    color: rgba(113, 47, 47, 0.69);
 }
 
 .card {
@@ -30,9 +41,34 @@ input {
 
 }
 
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .avatar {
     border-radius: 50%;
     border: 10px solid #afc7ec;
     height: 150px;
     width: 150px;
+}
+
+.user-info {
+    color: rgb(79, 18, 18);
+    margin-left: 2rem;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.user-info h2 {
+    margin-top: 0;
+}
+
+.user-info ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    max-width: 300px;
+    list-style-type: none;
 }
