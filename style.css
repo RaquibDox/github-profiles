@@ -120,18 +120,18 @@ input:focus {
 
     .user-info{
         margin-top: 1.5rem;
-        max-width: 55vw;
+        max-width: 60vw;
     }
 
     .user-info ul {
         display: flex;
         flex-direction: column;
-        max-width: 55vw;
+        max-width: 60vw;
         margin-top: 2rem;
     }
 
     .user-repo{
-        max-width: 55vw;
+        max-width: 60vw;
         grid-column-start: 1;
         grid-column-end: 2;
     }
