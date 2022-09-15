@@ -51,7 +51,7 @@ function createUserCard(user){
 
 function addReposCard(repos){
     const reposEl =document.getElementById('repos');
-    console.log(reposEl);
+    //console.log(reposEl);
 
     repos.sort((a,b) => b.stargazers_count -a.stargazers_count).forEach(repo => {
         const repoEl =document.createElement("a");
